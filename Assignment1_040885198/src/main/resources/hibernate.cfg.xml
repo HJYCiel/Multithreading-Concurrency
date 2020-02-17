@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- File: hibernate.cfg.xml
+ * Provided by: Todd Kelley (2016) Personal Communication
+ * Modified by: Mike Norman 2019/09
+ *
+ * Description: hibernate settings
+ -->
+<hibernate-configuration>
+   <session-factory>
+      <!-- See: http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl -->
+
+      <!-- 
+       Pick one
+         validate: validate that the schema matches, make no changes to the schema of the database (production)
+         update:   update the schema to reflect the entities being persisted (test)
+         create:   creates the schema necessary for your entities, destroying any previous data (dev, test)
+         create-drop: as in create above but also drop the schema at the end of the session (test)
+         
+      <property name="hibernate.hbm2ddl.auto">validate</property>
+      <property name="hibernate.hbm2ddl.auto">update</property>
+      <property name="hibernate.hbm2ddl.auto">create</property>
+      <property name="hibernate.hbm2ddl.auto">create-drop</property>
+      
+      -->
+      <property name="hibernate.hbm2ddl.auto">create</property>
+      <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+      <property name="hibernate.jdbc.time_zone">UTC</property>
+      <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+      <property name="hibernate.connection.autocommit">true</property>
+      <property name="hibernate.connection.pool_size">8</property>
+      <property name="hibernate.connection.username">sa</property>
+      <property name="hibernate.connection.password">password</property>
+      <property name="hibernate.connection.url">jdbc:h2:tcp://localhost:12345/~/tickets;IFEXISTS=TRUE</property>
+      
+   </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="h2_server-16d086fd72b-38154406fbb627a2" provider="generic" driver="h2_server" name="H2 - tickets" save-password="true" read-only="false">
+		<connection host="localhost" port="12345" server="" database="~/tickets" url="jdbc:h2:tcp://localhost:12345/~/tickets" user="sa" password="AwUVM1ZMVhJl8w==" type="dev">
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="true">
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="true">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="port" value="22"/>
+				<property name="implementation" value="jsch"/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+		</connection>
+	</data-source>
+	<filters/>
+</data-sources>
